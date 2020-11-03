@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("images/splash_tutorial_1.jpg"),
+                  image: AssetImage("assets/images/splash_tutorial_1.jpg"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -47,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                           padding: EdgeInsets.only(right: 16),
                           child: Icon(
                             Icons.alternate_email,
-                            color: LoginConst.kPrimaryColor,
+                            color: ThemeTutorial1.kPrimaryColor,
                           ),
                         ),
                         Expanded(
@@ -68,7 +68,7 @@ class LoginScreen extends StatelessWidget {
                         padding: EdgeInsets.only(right: 16),
                         child: Icon(
                           Icons.lock,
-                          color: LoginConst.kPrimaryColor,
+                          color: ThemeTutorial1.kPrimaryColor,
                         ),
                       ),
                       Expanded(
@@ -114,7 +114,7 @@ class LoginScreen extends StatelessWidget {
                           padding: EdgeInsets.all(16),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: LoginConst.kPrimaryColor,
+                            color: ThemeTutorial1.kPrimaryColor,
                           ),
                           child: Icon(
                             Icons.arrow_forward,

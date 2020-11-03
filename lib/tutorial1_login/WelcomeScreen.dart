@@ -13,7 +13,7 @@ class WelcomeScreen extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("images/splash_tutorial_1.jpg"),
+                  image: AssetImage("assets/images/splash_tutorial_1.jpg"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -51,7 +51,7 @@ class WelcomeScreen extends StatelessWidget {
                           EdgeInsets.symmetric(horizontal: 26, vertical: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
-                        color: LoginConst.kPrimaryColor,
+                        color: ThemeTutorial1.kPrimaryColor,
                       ),
                       child: Row(
                         children: <Widget>[

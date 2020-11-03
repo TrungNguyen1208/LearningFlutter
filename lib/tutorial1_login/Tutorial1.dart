@@ -17,14 +17,14 @@ class Tutorial1 extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
             brightness: Brightness.dark,
-            primaryColor: LoginConst.kPrimaryColor,
-            scaffoldBackgroundColor: LoginConst.kBackgroundColor,
+            primaryColor: ThemeTutorial1.kPrimaryColor,
+            scaffoldBackgroundColor: ThemeTutorial1.kBackgroundColor,
             textTheme: TextTheme(
               headline4:
               TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               headline5:
               TextStyle(color: Colors.white, fontWeight: FontWeight.normal),
-              button: TextStyle(color: LoginConst.kPrimaryColor),
+              button: TextStyle(color: ThemeTutorial1.kPrimaryColor),
             )),
         home: WelcomeScreen(),
       ),

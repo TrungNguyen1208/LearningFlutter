@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+import 'package:learning_flutter/tutorial2_food_delivery/ThemeTutorial2.dart';
+
+class CategoryTitle extends StatelessWidget {
+  final String title;
+  final bool isActive;
+
+  const CategoryTitle({
+    Key key,
+    this.isActive = false,
+    this.title,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, right: 30),
+      child: Text(
+        title,
+        style: Theme.of(context).textTheme.button.copyWith(
+          color: isActive
+              ? ThemeTutorial2.kPrimaryColor
+              : ThemeTutorial2.kTextColor.withOpacity(0.4),
+        ),
+      ),
+    );
+  }
+}

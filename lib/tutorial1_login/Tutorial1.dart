@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learning_flutter/general/constants.dart';
 import 'package:learning_flutter/tutorial1_login/WelcomeScreen.dart';
+
+import 'ThemeTutorial1.dart';
 
 class Tutorial1 extends StatelessWidget {
   // This widget is the root of your application.
@@ -14,7 +15,7 @@ class Tutorial1 extends StatelessWidget {
         }
       },
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: '',
         theme: ThemeData(
             brightness: Brightness.dark,
             primaryColor: ThemeTutorial1.kPrimaryColor,

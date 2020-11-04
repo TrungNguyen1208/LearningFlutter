@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learning_flutter/general/constants.dart';
 import 'package:learning_flutter/tutorial1_login/LoginScreen.dart';
+
+import 'ThemeTutorial1.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override

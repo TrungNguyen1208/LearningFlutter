@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:learning_flutter/tutorial2_food_delivery/DetailsTutorial2.dart';
 import 'package:learning_flutter/tutorial2_food_delivery/ThemeTutorial2.dart';
 import 'package:learning_flutter/tutorial2_food_delivery/model/FoodModel.dart';
 import 'package:learning_flutter/tutorial2_food_delivery/widget/CategoryTitle.dart';
@@ -23,6 +24,8 @@ class HomeTutorial2 extends StatelessWidget {
           "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. ",
     ),
   ];
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +100,14 @@ class HomeTutorial2 extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: <Widget>[
-                FoodCard(feedModel: listFoodModel[0], onPress: (){}),
+                FoodCard(feedModel: listFoodModel[0], onPress: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return DetailsTutorial2();
+                    }),
+                  );
+                }),
                 FoodCard(feedModel: listFoodModel[1], onPress: (){}),
                 SizedBox(width: 20),
               ],

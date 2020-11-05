@@ -50,9 +50,13 @@ flutter:
     - assets/images/splash_tutorial_1.jpg
     - assets/images/salad_1.png
     - assets/images/salad_2.png
+    - assets/images/big_salad.png
     - assets/icons/menu.svg
     - assets/icons/search.svg
     - assets/icons/plus.svg
+    - assets/icons/backward.svg
+    - assets/icons/forward.svg
+    - assets/icons/bag.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

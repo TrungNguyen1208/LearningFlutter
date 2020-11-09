@@ -7,6 +7,7 @@ import 'package:learning_flutter/tutorial2_food_delivery/widget/CategoryTitle.da
 import 'package:learning_flutter/tutorial2_food_delivery/widget/FoodCard.dart';
 
 class HomeTutorial2 extends StatelessWidget {
+
   static List<FoodModel> listFoodModel = <FoodModel>[
     FoodModel(
         title: "Vegan salad bowl",
@@ -24,8 +25,6 @@ class HomeTutorial2 extends StatelessWidget {
           "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. ",
     ),
   ];
-
-
 
   @override
   Widget build(BuildContext context) {

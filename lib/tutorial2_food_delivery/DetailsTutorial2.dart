@@ -149,3 +149,4 @@ class DetailsTutorial2 extends StatelessWidget {
     );
   }
 }
+

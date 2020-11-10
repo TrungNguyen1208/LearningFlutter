@@ -8,7 +8,7 @@ class CovidHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
+      statusBarColor: Colors.black,
       statusBarBrightness: Brightness.dark,
     ));
 

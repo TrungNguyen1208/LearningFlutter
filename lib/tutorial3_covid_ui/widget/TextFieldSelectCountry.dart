@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class TextFieldSelectCountry extends StatelessWidget {
+class TextFieldSelectCountry extends StatefulWidget {
+  @override
+  _TextFieldSelectCountryState createState() => _TextFieldSelectCountryState();
+}
+
+class _TextFieldSelectCountryState extends State<TextFieldSelectCountry> {
+
+  String _countrySelected = 'Indonesia';
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +33,7 @@ class TextFieldSelectCountry extends StatelessWidget {
               isExpanded: true,
               underline: SizedBox(),
               icon: SvgPicture.asset("assets/icons/dropdown.svg"),
-              value: "Indonesia",
+              value: _countrySelected,
               items: [
                 'Indonesia',
                 'Bangladesh',
@@ -37,9 +45,13 @@ class TextFieldSelectCountry extends StatelessWidget {
                   child: Text(value),
                 );
               }).toList(),
-              onChanged: (value) {},
+              onChanged: (newValue) {
+                setState(() {
+                  _countrySelected = newValue;
+                });
+              },
             ),
-          )
+          ),
         ],
       ),
     );

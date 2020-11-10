@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning_flutter/tutorial3_covid_ui/screen/InfoCovidScreen.dart';
 import 'package:learning_flutter/tutorial3_covid_ui/widget/CaseCovidInformation.dart';
 import 'package:learning_flutter/tutorial3_covid_ui/widget/HeaderHomeCovid.dart';
 import 'package:learning_flutter/tutorial3_covid_ui/widget/MapInformation.dart';
@@ -10,27 +11,36 @@ class HomeCovidScreen extends StatefulWidget {
 }
 
 class _HomeCovidScreenState extends State<HomeCovidScreen> {
-
-  final controller = ScrollController();
   double offset = 0;
+  final ScrollController scrollController = ScrollController();
+  final Function _onPressMenuHome = (context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return InfoCovidScreen();
+        },
+      ),
+    );
+  };
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    controller.addListener(onScroll);
+    scrollController.addListener(onScroll);
   }
 
   @override
   void dispose() {
     // TODO: implement dispose
-    controller.dispose();
+    scrollController.dispose();
     super.dispose();
   }
 
   void onScroll() {
     setState(() {
-      offset = (controller.hasClients) ? controller.offset : 0;
+      offset = (scrollController.hasClients) ? scrollController.offset : 0;
     });
   }
 
@@ -39,18 +49,25 @@ class _HomeCovidScreenState extends State<HomeCovidScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        controller: controller,
+        controller: scrollController,
         child: Column(
           children: <Widget>[
-            HeaderHomeCovid(offset: offset,),
+            HeaderHomeCovid(
+              image: "assets/icons/Drcorona.svg",
+              textTop: "All you need",
+              textBottom: "is stay at home.",
+              offset: offset,
+              onPressMenu: () {
+                _onPressMenuHome(context);
+              },
+            ),
             TextFieldSelectCountry(),
             CaseCovidInformation(),
             MapInformation(),
+            SizedBox(height: 20)
           ],
         ),
       ),
     );
   }
 }
-
-

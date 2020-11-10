@@ -7,9 +7,17 @@ class HeaderHomeCovid extends StatefulWidget {
   final String textTop;
   final String textBottom;
   final double offset;
+  final Function onPressMenu;
+  final bool isShowBack;
 
-  const HeaderHomeCovid(
-      {this.image, this.textTop, this.textBottom, this.offset});
+  const HeaderHomeCovid({
+    this.image,
+    this.textTop = "",
+    this.textBottom = "",
+    this.offset = 0,
+    this.onPressMenu,
+    this.isShowBack = false,
+  });
 
   @override
   _HeaderHomeCovidState createState() => _HeaderHomeCovidState();
@@ -39,13 +47,30 @@ class _HeaderHomeCovidState extends State<HeaderHomeCovid> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Align(
-                alignment: Alignment.topRight,
-                child: SvgPicture.asset(
-                  "assets/icons/menu.svg",
-                  height: 11,
-                  color: Colors.white,
-                ),
+              Row(
+                children: [
+                  (widget.isShowBack
+                      ? GestureDetector(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: Icon(Icons.arrow_back, color: Colors.white),
+                        )
+                      : Container()),
+                  Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      if (widget.onPressMenu != null) {
+                        widget.onPressMenu();
+                      }
+                    },
+                    child: SvgPicture.asset(
+                      "assets/icons/menu.svg",
+                      height: 11,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 20),
               Expanded(
@@ -54,7 +79,7 @@ class _HeaderHomeCovidState extends State<HeaderHomeCovid> {
                     Positioned(
                       top: (widget.offset < 0) ? 0 : widget.offset,
                       child: SvgPicture.asset(
-                        "assets/icons/Drcorona.svg",
+                        widget.image,
                         width: 230,
                         fit: BoxFit.fitWidth,
                         alignment: Alignment.topCenter,
@@ -64,7 +89,7 @@ class _HeaderHomeCovidState extends State<HeaderHomeCovid> {
                       top: 20 - widget.offset / 2,
                       left: 150,
                       child: Text(
-                        "All you need \nis stay at home",
+                        "${widget.textTop} \n${widget.textBottom}",
                         style: ThemeTutorial3.kHeadingTextStyle
                             .copyWith(color: Colors.white),
                       ),

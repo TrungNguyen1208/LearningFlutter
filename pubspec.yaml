@@ -32,6 +32,7 @@ dependencies:
   cupertino_icons: ^1.0.0
    # Date and number formatting and parsing
   intl: ^0.16.1
+  flutter_swiper: ^1.1.6
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:learning_flutter/tutorial5_movie_app/screen/detail/movie_detail_screen.dart';
 import 'package:learning_flutter/tutorial5_movie_app/screen/home/movie_home_screen.dart';
 
 class Tutorial5 extends StatelessWidget {
@@ -11,6 +12,7 @@ class Tutorial5 extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (BuildContext context) => MovieHomeScreen(),
+        'detailMovie': (BuildContext context) => MovieDetailScreen(),
       },
       theme: ThemeData(
         brightness: Brightness.light,
